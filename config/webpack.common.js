@@ -71,11 +71,10 @@ module.exports = {
 						loader: 'babel-loader',
 						options: {
 							presets: [
-								[ '@babel/preset-env',
-									{
-										'useBuiltIns': 'usage',
-										'corejs': 3,
-									} ]
+								[ '@babel/preset-env', {
+									'useBuiltIns': 'usage',
+									'corejs': 3,
+								} ]
 							],
 							cacheDirectory: true,
 							sourceMap: ! isProduction,
@@ -120,7 +119,9 @@ module.exports = {
 		} ),
 
 		// Clean the `dist` folder on build.
-		new CleanWebpackPlugin(),
+		new CleanWebpackPlugin( {
+			cleanStaleWebpackAssets: false,
+		} ),
 
 		// Extract CSS into individual files.
 		new MiniCssExtractPlugin( {
