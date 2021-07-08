@@ -3,6 +3,9 @@
   "rules": {},
   "globals": {
 	  "module": true,
-	  "process": true
+    "process": true,
+    "wp": true,
+    "lodash": true,
+    "require": true
   }
 }
